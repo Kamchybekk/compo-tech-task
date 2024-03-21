@@ -1,32 +1,7 @@
 import React from 'react';
 import { styled } from '@mui/system';
 import { Link } from 'react-router-dom';
-
-const breadcrumbs = [
-    { text: 'Каталог', link: '/catalog' },
-    { text: 'Обувь', link: '/shoes' },
-    { text: 'Кроссовки', link: '/sneakers' },
-    { text: 'Беговые', link: '/running' },
-];
-
-const BreadcrumbsContainer = styled('nav')`
-    font-size: 16px;
-    color: #646464;
-`;
-
-const BreadcrumbLink = styled(Link)`
-    color: inherit;
-    text-decoration: none;
-
-    &:hover {
-        text-decoration: underline;
-    }
-
-    &:not(:last-child):after {
-        content: ' / ';
-        padding: 0 8px;
-    }
-`;
+import { breadcrumbs } from '../../../helpers/constants';
 
 export default function Breadcrumbs() {
     return (
@@ -39,3 +14,21 @@ export default function Breadcrumbs() {
         </BreadcrumbsContainer>
     );
 }
+
+const BreadcrumbsContainer = styled('nav')`
+    padding: 17px 25px;
+    font-size: 16px;
+    color: #646464;
+    a {
+        cursor: pointer;
+    }
+`;
+
+const BreadcrumbLink = styled(Link)`
+    color: inherit;
+    text-decoration: none;
+    &:not(:last-child):after {
+        content: ' / ';
+        padding: 0 8px;
+    }
+`;

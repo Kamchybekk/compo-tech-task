@@ -39,7 +39,8 @@ const Nav = styled('nav')`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 25px;
+    padding: 17px 25px;
+    border-bottom: 1px solid #e2e4f0;
 `;
 
 const MenuList = styled('ul')`

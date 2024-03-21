@@ -12,3 +12,10 @@ export const rightMenuItems = [
     { name: 'Акции', id: 'actions', icon: <PercentIcon /> },
     { name: 'Блог', id: 'blog' },
 ];
+
+export const breadcrumbs = [
+    { text: 'Каталог', link: '/catalog' },
+    { text: 'Обувь', link: '/shoes' },
+    { text: 'Кроссовки', link: '/sneakers' },
+    { text: 'Беговые', link: '/running' },
+];

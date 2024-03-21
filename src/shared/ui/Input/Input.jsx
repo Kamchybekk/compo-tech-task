@@ -1,52 +1,70 @@
-import { InputBase, styled } from '@mui/material';
 import React, { forwardRef, useState } from 'react';
-import { RemoveIcon, SearchIcon } from '../../assets/icons';
+import { TextField, styled, InputAdornment } from '@mui/material';
+import { SearchIcon } from '../../assets/icons';
+import { RemoveIcon } from '../../assets/icons';
 
-export const Input = forwardRef((props, ref, value, setValue) => {
-    const [isFocused, setIsFocused] = useState(false);
+export const Input = forwardRef(({ onChange, ...props }, ref) => {
+    const [value, setValue] = useState('');
+
+    const handleChange = (event) => {
+        setValue(event.target.value);
+        if (onChange) {
+            onChange(event);
+        }
+    };
 
     return (
-        <ContainerInput className={isFocused ? 'focused' : ''}>
-            <StyledInput
-                onFocus={() => setIsFocused(true)}
-                onBlur={() => setIsFocused(false)}
-                value={value}
-                setValue={(e) => setValue(e.target.value)}
-                inputRef={ref}
-                placeholder="Название адреса "
-                {...props}
-            >
-                {props.children}
-            </StyledInput>
-            <RemoveIcon />
-            <SearchIcon />
-        </ContainerInput>
+        <StyledInput
+            size="small"
+            variant="outlined"
+            onChange={handleChange}
+            value={value}
+            placeholder="Название адреса"
+            InputProps={{
+                endAdornment: (
+                    <InputAdornment position="end">
+                        {value && (
+                            <StyledRemoveIcon onClick={() => setValue('')} />
+                        )}
+                        <SearchIcon />
+                    </InputAdornment>
+                ),
+            }}
+            inputProps={{
+                'aria-label': 'название адреса',
+            }}
+            ref={ref}
+            {...props}
+        />
     );
 });
 
-const ContainerInput = styled('div')`
-    display: flex;
-    align-content: center;
-    border: 1px solid #c7c7cc;
-    border-radius: 8px;
-    padding: 7px 15px;
-    transition: border 0.1s linear;
-    &.focused {
-        border: 2px solid var(--main-color);
-    }
-`;
-
-const StyledInput = styled(InputBase)`
-    border-radius: 8px;
+const StyledInput = styled(TextField)`
+    flex: 1;
     font-family: 'Montserrat', sans-serif;
-    background: #ffffff;
-    .input {
+    .MuiInputBase-input {
         font-family: 'Montserrat', sans-serif;
         font-weight: 400;
         color: #151515;
-        cursor: ${(props) => (props.pointer ? 'pointer' : '')};
+        cursor: ${(props) => (props.pointer ? 'pointer' : 'text')};
+        &.focused {
+            font-weight: bold;
+            color: #1551e5;
+        }
     }
-    &.error {
-        border-color: #ff3b30;
+    .MuiOutlinedInput-root {
+        padding: 5px 10px;
+        border-radius: 7px;
+        &:hover .MuiOutlinedInput-notchedOutline {
+            border-color: rgba(0, 0, 0, 0.23);
+        }
+        &.Mui-focused .MuiOutlinedInput-notchedOutline {
+            border-color: #1551e5;
+            border-width: 3px;
+        }
     }
 `;
+
+const StyledRemoveIcon = styled(RemoveIcon)({
+    cursor: 'pointer',
+});

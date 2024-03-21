@@ -4,3 +4,6 @@ export { ReactComponent as NotificationIcon } from './notification.svg';
 export { ReactComponent as RemoveIcon } from './removex.svg';
 export { ReactComponent as SearchIcon } from './search.svg';
 export { ReactComponent as BasketIcon } from './basket.svg';
+export { ReactComponent as ArrowIcon } from './arrow.svg';
+export { ReactComponent as PercentIcon } from './percent.svg';
+export { ReactComponent as MessengerIcon } from './messenger.svg';

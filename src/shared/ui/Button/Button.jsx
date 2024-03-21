@@ -27,19 +27,17 @@ export const Button = ({
 const StyledButton = styled('button')`
     display: flex;
     align-items: center;
-    gap: 7px;
+    gap: ${(props) => (props.gap ? props.gap : '7px')};
     color: ${(props) => (props.color ? props.color : '#FFFFFF')};
     background-color: ${(props) => props.backgroundColor};
-    min-width: 117;
-    min-height: 40;
     border-radius: 8px;
     padding: 13px 25px;
     border: none;
     outline: none;
     transition: 0.1s linear;
     :hover {
-        box-shadow: 0px 4px 14px 1px rgba(21, 81, 229, 0.52);
-        -webkit-box-shadow: 0px 4px 14px 1px rgba(21, 81, 229, 0.52);
-        -moz-box-shadow: 0px 4px 14px 1px rgba(21, 81, 229, 0.52);
+        box-shadow: 1px 4px 8px 0px rgba(21, 81, 229, 0.75);
+        -webkit-box-shadow: 1px 4px 8px 0px rgba(21, 81, 229, 0.75);
+        -moz-box-shadow: 1px 4px 8px 0px rgba(21, 81, 229, 0.75);
     }
 `;

@@ -3,12 +3,14 @@ import { styled } from '@mui/material';
 import logo from '../../shared/assets/images/logo.png';
 import { Button } from '../../shared/ui/Button/Button';
 import {
+    ArrowIcon,
     BasketIcon,
     FavoruiteIcon,
     MenuIcon,
     NotificationIcon,
 } from '../../shared/assets/icons';
 import { Input } from '../../shared/ui/Input/Input';
+import avatarImage from '../../shared/assets/images/Avatar.png';
 
 const Header = () => {
     return (
@@ -24,8 +26,16 @@ const Header = () => {
             <div className="container-input">
                 <Input fullWidth placeholder="Название запроса" />
             </div>
-            <NotificationIcon />
-            <FavoruiteIcon />
+            <div className="container-buttons">
+                <button>
+                    <NotificationIcon />
+                </button>
+                <StyledSeparatorElement />
+                <button>
+                    <FavoruiteIcon />
+                </button>
+            </div>
+
             <Button
                 color="#1551e5"
                 backgroundColor="#F2F6FF"
@@ -34,6 +44,10 @@ const Header = () => {
             >
                 144 235₽
             </Button>
+
+            <Avatar src={avatarImage} />
+            <span>Ермаков. K</span>
+            <StyledArrowIcon />
         </StyledHeader>
     );
 };
@@ -44,11 +58,37 @@ const StyledHeader = styled('header')`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 30px;
+    padding: 20px 25px;
     border-bottom: 1px solid #e2e4f0;
     .container-input {
-        width: 500px;
+        width: 550px;
+    }
+    .container-buttons {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        button {
+            background: none;
+            border: none;
+            outline: none;
+        }
     }
 `;
 
 const Logo = styled('img')``;
+
+const Avatar = styled('img')`
+    width: 50px;
+    height: 50px;
+`;
+
+const StyledArrowIcon = styled(ArrowIcon)`
+    cursor: pointer;
+    transform: rotate(180deg);
+`;
+
+const StyledSeparatorElement = styled('div')`
+    width: 1px;
+    height: 45px;
+    background-color: #e2e4f0;
+`;

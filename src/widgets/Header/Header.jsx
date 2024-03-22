@@ -11,8 +11,11 @@ import {
 } from '../../shared/assets/icons';
 import { Input } from '../../shared/ui/Input/Input';
 import avatarImage from '../../shared/assets/images/Avatar.png';
+import Seperator from '../../shared/ui/SeparatorElement/Seperator';
+import { useCart } from '../../context/CartContext';
 
 const Header = () => {
+    const { totalPrice } = useCart();
     return (
         <StyledHeader>
             <Logo src={logo} />
@@ -30,7 +33,7 @@ const Header = () => {
                 <button>
                     <NotificationIcon />
                 </button>
-                <StyledSeparatorElement />
+                <Seperator width="1px" height="45px" />
                 <button>
                     <FavoruiteIcon />
                 </button>
@@ -42,7 +45,7 @@ const Header = () => {
                 icon={<BasketIcon />}
                 variant=""
             >
-                144 235₽
+                {totalPrice.toLocaleString('ru-RU')} ₽
             </Button>
 
             <Avatar src={avatarImage} />
@@ -85,10 +88,4 @@ const Avatar = styled('img')`
 const StyledArrowIcon = styled(ArrowIcon)`
     cursor: pointer;
     transform: rotate(180deg);
-`;
-
-const StyledSeparatorElement = styled('div')`
-    width: 1px;
-    height: 45px;
-    background-color: #e2e4f0;
 `;

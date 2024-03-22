@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { styled } from '@mui/material';
 import { Button } from '../../shared/ui/Button/Button';
-import { menuItems } from '../../helpers/constants';
-import { rightMenuItems } from '../../helpers/constants';
+import { menuItems } from '../../helpers/helpers';
+import { rightMenuItems } from '../../helpers/helpers';
 
 export default function Navbar() {
     const [active, setActive] = useState('manager');

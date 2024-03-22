@@ -1,7 +1,7 @@
 import React from 'react';
 import { styled } from '@mui/system';
 import { Link } from 'react-router-dom';
-import { breadcrumbs } from '../../../helpers/constants';
+import { breadcrumbs } from '../../../helpers/helpers';
 
 export default function Breadcrumbs() {
     return (
@@ -16,7 +16,7 @@ export default function Breadcrumbs() {
 }
 
 const BreadcrumbsContainer = styled('nav')`
-    padding: 17px 25px;
+    margin-bottom: 13px;
     font-size: 16px;
     color: #646464;
     a {

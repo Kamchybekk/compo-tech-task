@@ -7,3 +7,7 @@ export { ReactComponent as BasketIcon } from './basket.svg';
 export { ReactComponent as ArrowIcon } from './arrow.svg';
 export { ReactComponent as PercentIcon } from './percent.svg';
 export { ReactComponent as MessengerIcon } from './messenger.svg';
+export { ReactComponent as SaveIcon } from './save.svg';
+export { ReactComponent as EditIcon } from './edit.svg';
+export { ReactComponent as PlusIcon } from './plus.svg';
+export { ReactComponent as MinusIcon } from './minus.svg';

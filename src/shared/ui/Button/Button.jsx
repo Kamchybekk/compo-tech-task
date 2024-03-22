@@ -36,8 +36,8 @@ const StyledButton = styled('button')`
     outline: none;
     transition: 0.1s linear;
     :hover {
-        box-shadow: 1px 4px 8px 0px rgba(21, 81, 229, 0.75);
-        -webkit-box-shadow: 1px 4px 8px 0px rgba(21, 81, 229, 0.75);
-        -moz-box-shadow: 1px 4px 8px 0px rgba(21, 81, 229, 0.75);
+        box-shadow: 1px 2px 5px 0px rgba(21, 81, 229, 0.51);
+        -webkit-box-shadow: 1px 2px 5px 0px rgba(21, 81, 229, 0.51);
+        -moz-box-shadow: 1px 2px 5px 0px rgba(21, 81, 229, 0.51);
     }
 `;
